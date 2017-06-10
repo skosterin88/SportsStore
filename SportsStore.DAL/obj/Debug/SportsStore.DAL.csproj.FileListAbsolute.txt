@@ -8,3 +8,13 @@ C:\Sergey\VSNetSamples\SportsStore1\SportsStore.DAL\bin\Debug\EntityFramework.Sq
 C:\Sergey\VSNetSamples\SportsStore1\SportsStore.DAL\obj\Debug\SportsStore.DAL.csprojResolveAssemblyReference.cache
 C:\Sergey\VSNetSamples\SportsStore1\SportsStore.DAL\obj\Debug\SportsStore.DAL.dll
 C:\Sergey\VSNetSamples\SportsStore1\SportsStore.DAL\obj\Debug\SportsStore.DAL.pdb
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\SportsStore.DAL.dll.config
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\SportsStore.DAL.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\SportsStore.DAL.pdb
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\EntityFramework.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\EntityFramework.xml
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.csprojResolveAssemblyReference.cache
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.pdb

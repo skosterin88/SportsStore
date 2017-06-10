@@ -1,0 +1,15 @@
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\SportsStore.Tests.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\SportsStore.Tests.pdb
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\Castle.Core.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\Moq.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\SportsStore.DAL.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\EntityFramework.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\SportsStore.DAL.pdb
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\Castle.Core.xml
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\Moq.xml
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\EntityFramework.xml
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\obj\Debug\SportsStore.Tests.csprojResolveAssemblyReference.cache
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\obj\Debug\SportsStore.Tests.dll
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\obj\Debug\SportsStore.Tests.pdb
