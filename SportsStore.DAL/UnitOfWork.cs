@@ -6,7 +6,6 @@ namespace SportsStore.DAL
     {
         private readonly EfDbContext _db;
         private ProductRepository _products;
-        private AttributeRepository _attributes;
         private CategoryRepository _categories;
         private bool _isDisposed;
 
@@ -14,19 +13,7 @@ namespace SportsStore.DAL
         {
             _db = new EfDbContext(connectionString);
         }
-
-        public IRepository<Attribute> Attributes
-        {
-            get
-            {
-                if (_attributes == null)
-                {
-                    _attributes = new AttributeRepository(_db);
-                }
-                return _attributes;
-            }
-        }
-
+        
         public IRepository<Category> Categories
         {
             get
@@ -50,7 +37,59 @@ namespace SportsStore.DAL
                 return _products;
             }
         }
-        
+
+        IRepository<Product> IUnitOfWork.Products
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        IRepository<Category> IUnitOfWork.Categories
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IRepository<Customer> Customers
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public IRepository<Order> Orders
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public virtual void Dispose(bool disposing)
         {
             if (!_isDisposed)

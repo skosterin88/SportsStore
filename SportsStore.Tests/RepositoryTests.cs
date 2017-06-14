@@ -84,10 +84,11 @@ namespace SportsStore.Tests
         [TestMethod]
         public void CanGetProductByCondition()
         {
-            var testProducts = _productsRepository.FindByCondition(prod => prod.Price == 200);
+            var productsFindResult = _productsRepository.FindByCondition(prod => prod.Price == 200);
+            var products = productsFindResult as Product[] ?? productsFindResult.ToArray();
 
-            Assert.IsNotNull(testProducts.ElementAt(0));
-            Assert.AreEqual("Product 2", testProducts.ElementAt(0).Name);
+            Assert.IsNotNull(products.ElementAt(0));
+            Assert.AreEqual("Product 2", products.ElementAt(0).Name);
         }
     }
 }

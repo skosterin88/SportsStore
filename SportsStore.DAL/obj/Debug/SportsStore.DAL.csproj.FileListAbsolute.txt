@@ -18,3 +18,5 @@ C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\bin\Debug\EntityFramework.Sql
 C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.csprojResolveAssemblyReference.cache
 C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.dll
 C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.pdb
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.Migrations.InitialModel.resources
+C:\Sergey\VSNetSamples\SportsStore\SportsStore.DAL\obj\Debug\SportsStore.DAL.csproj.GenerateResource.Cache
