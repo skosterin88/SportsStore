@@ -13,3 +13,7 @@ C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\EntityFramework.x
 C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\obj\Debug\SportsStore.Tests.csprojResolveAssemblyReference.cache
 C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\obj\Debug\SportsStore.Tests.dll
 C:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\obj\Debug\SportsStore.Tests.pdb
+c:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\SportsStore.BLL.dll
+c:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\AutoMapper.dll
+c:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\SportsStore.BLL.pdb
+c:\Sergey\VSNetSamples\SportsStore\SportsStore.Tests\bin\Debug\AutoMapper.xml
