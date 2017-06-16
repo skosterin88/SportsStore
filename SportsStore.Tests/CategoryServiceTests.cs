@@ -9,7 +9,7 @@ using SportsStore.DAL;
 namespace SportsStore.Tests
 {
     [TestClass]
-    public class ProductServiceTests
+    public class CategoryServiceTests
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -172,6 +172,14 @@ namespace SportsStore.Tests
                 ParentCategoryId = 0,
                 Products = new List<Product> { product5 }
             };
+            var category555 = new Category
+            {
+                Id = 555,
+                Name = "Category 1.01",
+                NumberInCategoryList = 1,
+                ParentCategoryId = 1,
+                Products = null
+            };
 
             product1.Categories = new List<Category> { category1 };
             product2.Categories = new List<Category> { category1 };
@@ -184,7 +192,7 @@ namespace SportsStore.Tests
                 Id = 1,
                 CreationTime = DateTime.Parse("10.06.2017 12:00"),
                 TotalSum = product1.Price + product2.Price,
-                Products = new List<Product> {product1, product2}
+                Products = new List<Product> { product1, product2 }
             };
             var order2 = new Order
             {
@@ -220,8 +228,8 @@ namespace SportsStore.Tests
             order1.Customer = customer1;
             order2.Customer = customer2;
 
-            IList<Product> products = new List<Product> {product1, product2, product3, product4, product5};
-            IList<Category> categories = new List<Category> { category1, category2, category3 };
+            IList<Product> products = new List<Product> { product1, product2, product3, product4, product5 };
+            IList<Category> categories = new List<Category> { category1, category2, category3, category555 };
             IList<Order> orders = new List<Order> { order1, order2 };
             IList<Customer> customers = new List<Customer> { customer1, customer2 };
 
@@ -240,59 +248,94 @@ namespace SportsStore.Tests
             return unitOfWork;
         }
 
-        public ProductServiceTests()
+        public CategoryServiceTests()
         {
             _unitOfWork = CreateFakeUnitOfWork();
         }
 
         [TestMethod]
-        public void CanAddNewProduct()
+        public void CanAddNewCategory()
         {
-            var newProductDto = new ProductDto
+            var newCategoryDto = new CategoryDto
             {
-                Id = 6,
-                Name = "Product 6",
-                CategoryIds = new List<int> {1,2},
-                Description = "Product #6",
-                Price = 1000
+                Id = 4,
+                Name = "Category 4",
+                NumberInCategoryList = 4,
+                ParentCategoryId = 0,
+                ProductIds = null
             };
-            IProductService productService = new ProductService(_unitOfWork);
 
-            productService.AddProduct(newProductDto);
+            ICategoryService categoryService = new CategoryService(_unitOfWork);
+            categoryService.AddCategory(newCategoryDto);
 
-            var products = _unitOfWork.Products.GetAll().ToArray();
-            Assert.AreEqual(6, products.Length);
-            Assert.AreEqual(2, products.Last().Categories.Count);
-            Assert.AreEqual("Category 1", products.Last().Categories.ElementAt(0).Name);
-            Assert.AreEqual("Category 2", products.Last().Categories.ElementAt(1).Name);
+            var categories = _unitOfWork.Categories.GetAll().ToArray();
+            Assert.AreEqual("Category 4", categories.Last().Name);
         }
 
         [TestMethod]
-        public void CanEnumerateAllProducts()
+        public void CanAddSubcategory()
         {
-            IProductService productService = new ProductService(_unitOfWork);
+            var subcategoryDto = new CategoryDto
+            {
+                Id = 4,
+                Name = "Category 1.1",
+                NumberInCategoryList = 1,
+                ProductIds = null
+            };
 
-            var products = productService.GetAllProducts().ToArray();
+            ICategoryService categoryService = new CategoryService(_unitOfWork);
+            categoryService.AddSubcategory(1, subcategoryDto);
 
-            Assert.AreEqual("Product 1", products.ElementAt(0).Name);
-            Assert.AreEqual(1,products.ElementAt(0).CategoryIds.ElementAt(0));
+            var subcategories = _unitOfWork.Categories.FindByCondition(catg => catg.ParentCategoryId == 1).ToArray();
+            Assert.AreEqual(2,subcategories.Length);
+            Assert.AreEqual("Category 1.01",subcategories[0].Name);
         }
 
         [TestMethod]
-        public void CanGetProductById()
+        public void CanEnumerateAllTopLevelCategories()
         {
-            IProductService productService = new ProductService(_unitOfWork);
+            var subcategoryDto1 = new CategoryDto
+            {
+                Id = 4,
+                Name = "Category 1.1",
+                NumberInCategoryList = 1,
+                ProductIds = null
+            };
+            var subcategoryDto2 = new CategoryDto
+            {
+                Id = 5,
+                Name = "Category 2.1",
+                NumberInCategoryList = 1,
+                ProductIds = null
+            };
 
-            var productDto1 = productService.GetProduct(1);
-            var productDto2 = productService.GetProduct(2);
-            var productDto3 = productService.GetProduct(3);
+            ICategoryService categoryService = new CategoryService(_unitOfWork);
+            categoryService.AddSubcategory(1,subcategoryDto1);
+            categoryService.AddSubcategory(2,subcategoryDto2);
+            var topLevelCategories = categoryService.GetAllTopLevelCategories().ToArray();
 
-            Assert.AreEqual("Product 1", productDto1.Name);
-            Assert.AreEqual(1, productDto1.CategoryIds.ElementAt(0));
-            Assert.AreEqual("Product 2", productDto2.Name);
-            Assert.AreEqual(1, productDto2.CategoryIds.ElementAt(0));
-            Assert.AreEqual("Product 3", productDto3.Name);
-            Assert.AreEqual(2, productDto3.CategoryIds.ElementAt(0));
+            Assert.AreEqual(3, topLevelCategories.Length);
+            Assert.AreEqual("Category 1", topLevelCategories[0].Name);
+        }
+
+        [TestMethod]
+        public void CanGetSingleCategoryById()
+        {
+            ICategoryService categoryService = new CategoryService(_unitOfWork);
+            var category = categoryService.GetCategory(2);
+
+            Assert.AreEqual("Category 2", category.Name);
+            Assert.AreEqual(2, category.ProductIds.Count());
+        }
+
+        [TestMethod]
+        public void CanGetSingleCategorySubcategories()
+        {
+            ICategoryService categoryService = new CategoryService(_unitOfWork);
+            var subcategories = categoryService.GetSubcategories(1).ToArray();
+
+            Assert.AreEqual(1, subcategories.Length);
+            Assert.AreEqual("Category 1.01", subcategories[0].Name);
         }
     }
 }

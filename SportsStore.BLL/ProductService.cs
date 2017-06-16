@@ -1,49 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using SportsStore.DAL;
 using AutoMapper;
+using SportsStore.DAL;
 
 namespace SportsStore.BLL
 {
     public class ProductService : IProductService
     {
-        private IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
         public ProductService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-        }
 
+            var mapperFactory = new MapperFactory(unitOfWork);
+            _mapper = mapperFactory.CreateMapper();
+        }
+        
         public void AddProduct(ProductDto productDto)
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<ProductDto, Product>()
-                    .ForMember(prod => prod.Categories,
-                        src =>
-                            src.MapFrom(
-                                pdto =>
-                                    _unitOfWork.Categories.FindByCondition(catg => pdto.CategoryIds.Contains(catg.Id))));
-            });
-            var mapper = config.CreateMapper();
-            var product = mapper.Map<ProductDto, Product>(productDto);
+            var product = _mapper.Map<ProductDto, Product>(productDto);
             _unitOfWork.Products.Create(product);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Dispose();
         }
 
         public IEnumerable<ProductDto> GetAllProducts()
         {
-            throw new NotImplementedException();
+            var products = _unitOfWork.Products.GetAll();
+            var productDtos = products.Select(product => _mapper.Map<Product, ProductDto>(product));
+
+            return productDtos;
         }
 
         public ProductDto GetProduct(int id)
         {
-            throw new NotImplementedException();
+            var product = _unitOfWork.Products.GetById(id);
+            var productDto = _mapper.Map<Product, ProductDto>(product);
+
+            return productDto;
         }
     }
 }

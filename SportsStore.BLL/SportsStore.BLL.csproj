@@ -45,11 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDto.cs" />
+    <Compile Include="CategoryService.cs" />
     <Compile Include="CustomerDto.cs" />
     <Compile Include="ICategoryService.cs" />
     <Compile Include="ICustomerService.cs" />
     <Compile Include="IOrderService.cs" />
     <Compile Include="IProductService.cs" />
+    <Compile Include="MapperFactory.cs" />
     <Compile Include="ProductDto.cs" />
     <Compile Include="OrderDto.cs" />
     <Compile Include="ProductService.cs" />
