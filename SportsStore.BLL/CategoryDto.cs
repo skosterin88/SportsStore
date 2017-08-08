@@ -8,6 +8,7 @@ namespace SportsStore.BLL
         public int ParentCategoryId { get; set; }
         public int NumberInCategoryList { get; set; }
         public string Name { get; set; }
+        public IEnumerable<CategoryDto> Subcategories { get; set; }
         public IEnumerable<int> ProductIds { get; set; }
     }
 }

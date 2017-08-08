@@ -4,10 +4,10 @@ namespace SportsStore.DAL
 {
     public interface IUnitOfWork : IDisposable
     {
-        IRepository<Product> Products { get; set; }
-        IRepository<Category> Categories { get; set; }
-        IRepository<Customer> Customers { get; set; }
-        IRepository<Order> Orders { get; set; }
+        IRepository<Product> Products { get;  }
+        IRepository<Category> Categories { get; }
+        IRepository<Customer> Customers { get; }
+        IRepository<Order> Orders { get; }
         void Save();
     }
 }

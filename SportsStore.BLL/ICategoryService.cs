@@ -8,6 +8,7 @@ namespace SportsStore.BLL
         void AddCategory(CategoryDto categoryDto);
         void AddSubcategory(int parentCategoryId, CategoryDto subcategory);
         CategoryDto GetCategory(int id);
+        IEnumerable<CategoryDto> GetAllCategories();
         IEnumerable<CategoryDto> GetAllTopLevelCategories();
         IEnumerable<CategoryDto> GetSubcategories(int parentCategoryId);
     }

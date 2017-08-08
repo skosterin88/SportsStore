@@ -4,11 +4,6 @@ namespace SportsStore.DAL
 {
     public class EfDbContext : DbContext
     {
-        public EfDbContext()
-               : base("EfDbContext")
-        {
-        }
-
         public EfDbContext(string connectionString)
             : base(connectionString)
         {

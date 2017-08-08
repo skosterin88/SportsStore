@@ -1,10 +1,12 @@
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\SportsStore.BLL.dll
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\SportsStore.BLL.pdb
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\AutoMapper.dll
+c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\Ninject.dll
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\SportsStore.DAL.dll
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\EntityFramework.dll
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\SportsStore.DAL.pdb
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\AutoMapper.xml
+c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\Ninject.xml
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\bin\Debug\EntityFramework.xml
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\obj\Debug\SportsStore.BLL.csprojResolveAssemblyReference.cache
 c:\Sergey\VSNetSamples\SportsStore\SportsStore.BLL\obj\Debug\SportsStore.BLL.dll

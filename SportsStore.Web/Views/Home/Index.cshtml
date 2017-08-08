@@ -1,0 +1,17 @@
+﻿@using System
+@model IEnumerable<SportsStore.Web.Models.CategoryViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<nav>
+    <ul>
+        @foreach (var category in Model)
+        {
+            @category.HtmlView
+        }
+    </ul>
+</nav>

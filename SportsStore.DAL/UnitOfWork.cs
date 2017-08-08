@@ -38,40 +38,9 @@ namespace SportsStore.DAL
             }
         }
 
-        IRepository<Product> IUnitOfWork.Products
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        IRepository<Category> IUnitOfWork.Categories
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public IRepository<Customer> Customers
         {
             get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
             {
                 throw new NotImplementedException();
             }
@@ -80,11 +49,6 @@ namespace SportsStore.DAL
         public IRepository<Order> Orders
         {
             get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
             {
                 throw new NotImplementedException();
             }
